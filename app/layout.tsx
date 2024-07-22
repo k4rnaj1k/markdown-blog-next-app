@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import styled from "styled-components";
-import { BodyStyled } from "./components/BodyStyled";
+import { BodyStyled, HtmlStyled } from "./components/BodyStyled";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,10 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <HtmlStyled lang="en">
       <BodyStyled>
         {children}
       </BodyStyled>
-    </html>
+    </HtmlStyled>
   );
 }
