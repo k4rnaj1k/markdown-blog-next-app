@@ -12,7 +12,7 @@ export default async function AllBlogsPage() {
     return <>
         {
             allBlogsData.map(blogData => (RESERVED_NAMES.indexOf(blogData.blogLink) == -1 &&
-                <BlogContentWrapper $hasMarginBottom>
+                <BlogContentWrapper key={blogData.blogLink} $hasMarginBottom>
                     <BlogTitleStyled>
                         {blogData.blogTitle}
                     </BlogTitleStyled>
