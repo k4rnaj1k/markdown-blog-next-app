@@ -1,9 +1,9 @@
-export const dynamic = 'force-dynamic';
-
 'use server'
+
 import { BlogContent } from "@/app/components/BlogContent";
 import { BlogContentWrapper, BlogPageWrapper, BlogTitleStyled } from "@/app/components/BlogPage";
 import { getBlogContent } from "@/app/utils/getBlogContent";
+import { unstable_noStore as noStore } from "next/cache";
 import { redirect } from "next/navigation";
 
 //TODO: replace placeholder with actual page

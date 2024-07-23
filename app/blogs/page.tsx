@@ -1,8 +1,9 @@
-export const dynamic = 'force-dynamic';
+'use server'
 
+import { unstable_noStore as noStore } from "next/cache";
 import { BlogContent } from "../components/BlogContent";
 import { BlogContentWrapper, BlogTitleStyled } from "../components/BlogPage";
-import { BlogPreview, Separator } from "../components/BlogsPage";
+import { Separator } from "../components/BlogsPage";
 import { ListLinkStyled } from "../components/ListStyled";
 import { getAllBlogsData } from "../utils/getBlogContent";
 
