@@ -8,7 +8,6 @@ export default async function AboutPage() {
     const blogsBaseFolder = await getBlogFolder();
     const aboutContent = await getFileContent(blogsBaseFolder + '/' + 'about.md');
     return <>
-        <Navbar />
         <BlogPageWrapper>
             <BlogContentWrapper>
                 <BlogContent>{aboutContent}</BlogContent>

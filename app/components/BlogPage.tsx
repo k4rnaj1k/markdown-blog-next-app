@@ -8,6 +8,7 @@ export const BlogPageWrapper = styled.div`
     img {
         display: block;
         margin: auto;
+        max-height: 40vh;
     }
 `;
 
@@ -18,10 +19,12 @@ export const BlogContentWrapper = styled.div<{ $hasMarginBottom?: boolean }>`
     margin-left: auto;
     /* background-color:#3e3e42; */
     margin-bottom: ${({$hasMarginBottom} ) => $hasMarginBottom ? '15px': '0' };
+    @media(max-width: 600px) {
+        width: 95vw;
+    }
     /* margin-bottom: 15px; */
 `;
 
-export const BlogTitleStyled = styled.p`
-  
+export const BlogTitleStyled = styled.h2`
 `;
 

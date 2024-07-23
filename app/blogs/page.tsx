@@ -1,6 +1,6 @@
 import { BlogContent } from "../components/BlogContent";
-import { BlogContentWrapper } from "../components/BlogPage";
-import { BlogPreview } from "../components/BlogsPage";
+import { BlogContentWrapper, BlogTitleStyled } from "../components/BlogPage";
+import { BlogPreview, Separator } from "../components/BlogsPage";
 import { ListLinkStyled } from "../components/ListStyled";
 import { getAllBlogsData } from "../utils/getBlogContent";
 
@@ -13,11 +13,12 @@ export default async function AllBlogsPage() {
         {
             allBlogsData.map(blogData => (RESERVED_NAMES.indexOf(blogData.blogLink) == -1 &&
                 <BlogContentWrapper $hasMarginBottom>
-                    <BlogPreview>
+                    <BlogTitleStyled>
                         {blogData.blogTitle}
-                    </BlogPreview>
-                    <BlogContent>{blogData.blogContent.slice(0, 200)}</BlogContent>
+                    </BlogTitleStyled>
+                    <BlogContent>{blogData.blogContent.slice(0, 100)}</BlogContent>
                     <ListLinkStyled href={'/blogs/' + blogData.blogLink}>Continue reading...</ListLinkStyled>
+                    <Separator />
                 </BlogContentWrapper>
             ))
         }

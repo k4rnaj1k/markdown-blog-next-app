@@ -1,24 +1,24 @@
 'use server'
 import styled from "styled-components";
 import { getBlogName } from "../service/configService";
-import { ListElement, ListLinkStyled, ListStyled, NavbarWrapper } from "./ListStyled";
+import { LinksListElement, ListLinkStyled, LinksListStyled, NavbarWrapper } from "./ListStyled";
 
 
 
 export const Navbar = async () => {
   const blogName = await getBlogName();
   return <NavbarWrapper>
-    <ListStyled>
-      <ListElement>{blogName}</ListElement>
-      <ListElement>
+    <LinksListStyled>
+      <LinksListElement>{blogName}</LinksListElement>
+      <LinksListElement>
         <ListLinkStyled href="/home">home</ListLinkStyled>
-      </ListElement>
-      <ListElement>
+      </LinksListElement>
+      <LinksListElement>
         <ListLinkStyled href="/blogs">blogs</ListLinkStyled>
-      </ListElement>
-      <ListElement>
+      </LinksListElement>
+      <LinksListElement>
         <ListLinkStyled href="/about">about</ListLinkStyled>
-      </ListElement>
-    </ListStyled>
+      </LinksListElement>
+    </LinksListStyled>
   </NavbarWrapper>
 };

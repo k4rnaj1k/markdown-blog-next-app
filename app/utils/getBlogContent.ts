@@ -26,7 +26,7 @@ export async function getBlogContentByFilename(fileName: string): Promise<BlogDa
   const blogFolder = await getBlogFolder();
   const fileToString = await getFileContent(fileName);
   const blogTitle = fileToString.split("[Content]")[0];
-  const blogContent = fileToString.replace(blogTitle, "");
+  const blogContent = fileToString.replace(blogTitle, "").replace('[Content]', '').trim();
   const result: BlogData = {
     blogContent,
     blogTitle,

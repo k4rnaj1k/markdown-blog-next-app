@@ -2,12 +2,13 @@
 
 import styled from "styled-components";
 
-export const ListStyled = styled.ul`
-  list-style-type: none;
+export const LinksListStyled = styled.div`
   margin-top: 0px;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
-export const ListElement = styled.li`
+export const LinksListElement = styled.div`
   padding-left: 50px;
   float: left;
 `;
