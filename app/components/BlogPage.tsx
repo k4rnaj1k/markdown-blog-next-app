@@ -8,7 +8,11 @@ export const BlogPageWrapper = styled.div`
     img {
         display: block;
         margin: auto;
-        max-height: 40vh;
+        object-fit: cover;
+        max-width: 40vw;
+        @media(max-width: 900px) {
+            max-width: 90vw;
+        }
     }
 `;
 
@@ -18,7 +22,7 @@ export const BlogContentWrapper = styled.div<{ $hasMarginBottom?: boolean }>`
     padding: 15px;
     margin-left: auto;
     /* background-color:#3e3e42; */
-    margin-bottom: ${({$hasMarginBottom} ) => $hasMarginBottom ? '15px': '0' };
+    margin-bottom: ${({ $hasMarginBottom }) => $hasMarginBottom ? '15px' : '0'};
     @media(max-width: 600px) {
         width: 95vw;
     }

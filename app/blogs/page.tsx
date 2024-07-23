@@ -11,6 +11,7 @@ const RESERVED_NAMES = ['about', 'home'];
 
 export default async function AllBlogsPage() {
     const allBlogsData = await getAllBlogsData();
+    let _ = noStore();
 
     return <>
         {
