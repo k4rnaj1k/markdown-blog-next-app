@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 'use server'
 import { BlogContent } from "@/app/components/BlogContent";
 import { BlogContentWrapper, BlogPageWrapper, BlogTitleStyled } from "@/app/components/BlogPage";

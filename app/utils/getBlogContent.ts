@@ -2,6 +2,7 @@
 import { readdirSync, readFileSync } from "fs";
 import { BlogData } from "../types/AppConfig";
 import { getBlogFolder } from "../service/configService";
+import 'server-only'
 
 const getBlogFileName = ({
   blogsFolder,

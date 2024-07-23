@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { BlogContent } from "../components/BlogContent";
 import { BlogContentWrapper, BlogTitleStyled } from "../components/BlogPage";
 import { BlogPreview, Separator } from "../components/BlogsPage";
