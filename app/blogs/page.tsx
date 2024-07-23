@@ -11,8 +11,6 @@ const RESERVED_NAMES = ['about', 'home'];
 
 export default async function AllBlogsPage() {
     const allBlogsData = await getAllBlogsData();
-    let _ = noStore();
-
     return <>
         {
             allBlogsData.map(blogData => (RESERVED_NAMES.indexOf(blogData.blogLink) == -1 &&

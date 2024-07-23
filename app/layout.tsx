@@ -21,6 +21,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let _ = noStore();
   return (
     <HtmlStyled lang="en" className={roboto.className}>
       <BodyStyled>

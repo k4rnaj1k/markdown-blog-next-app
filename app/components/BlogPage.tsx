@@ -9,7 +9,7 @@ export const BlogPageWrapper = styled.div`
         display: block;
         margin: auto;
         object-fit: cover;
-        max-width: 40vw;
+        max-width: 65vw;
         @media(max-width: 900px) {
             max-width: 90vw;
         }

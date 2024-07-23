@@ -3,14 +3,11 @@
 import { BlogContent } from "@/app/components/BlogContent";
 import { BlogContentWrapper, BlogPageWrapper, BlogTitleStyled } from "@/app/components/BlogPage";
 import { getBlogContent } from "@/app/utils/getBlogContent";
-import { unstable_noStore as noStore } from "next/cache";
 import { redirect } from "next/navigation";
 
 //TODO: replace placeholder with actual page
 export default async function BlogPage({ params }: { params: { blogName: string } }) {
     const { blogName } = params;
-    let _ = noStore();
-
     try {
         const { blogContent, blogTitle } = await getBlogContent(blogName);
         //blogname
