@@ -10,10 +10,12 @@ import { getAllBlogsData } from "../utils/getBlogContent";
 const RESERVED_NAMES = ['about', 'home'];
 
 export default async function AllBlogsPage() {
+    let _ = noStore();
     const allBlogsData = await getAllBlogsData();
+
     return <>
         {
-            allBlogsData.map(blogData => (RESERVED_NAMES.indexOf(blogData.blogLink) == -1 &&
+            allBlogsData.map(blogData => (RESERVED_NAMES.indexOf(blogData.blogLink) == -1 && !blogData.blogLink.startsWith('#') &&
                 <BlogContentWrapper key={blogData.blogLink} $hasMarginBottom>
                     <BlogTitleStyled>
                         {blogData.blogTitle}

@@ -1,5 +1,5 @@
 "use server";
-import { readdirSync, readFileSync } from "fs";
+import { readdirSync, readFileSync, statSync } from "fs";
 import { BlogData } from "../types/AppConfig";
 import { getBlogFolder } from "../service/configService";
 import 'server-only'
@@ -41,8 +41,20 @@ export async function getFileContent(fileName: string): Promise<string> {
   return file.toString();
 }
 
+const getSortedFiles = async (dir: string) => {
+  const files = readdirSync(dir);
+
+  return files
+    .map(fileName => ({
+      name: fileName,
+      time: statSync(`${dir}/${fileName}`).ctime.getTime(),
+    }))
+    .sort((a, b) => a.time - b.time)
+    .map(file => file.name);
+};
+
 export async function getAllBlogsData(): Promise<Array<BlogData>> {
   const blogsFolder = await getBlogFolder();
-  const result = readdirSync(blogsFolder);
+  const result = await getSortedFiles(blogsFolder);
   return Promise.all(result.map(fileName => getBlogContentByFilename(blogsFolder + '/' + fileName)));
 };
