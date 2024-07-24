@@ -49,7 +49,7 @@ const getSortedFiles = async (dir: string) => {
       name: fileName,
       time: statSync(`${dir}/${fileName}`).ctime.getTime(),
     }))
-    .sort((a, b) => a.time - b.time)
+    .sort((a, b) => b.time - a.time)
     .map(file => file.name);
 };
 
