@@ -7,5 +7,6 @@ export type AppConfig = {
 export type BlogData = {
     blogTitle: string, 
     blogContent: string,
-    blogLink: string
+    blogLink: string,
+    blogPreview: string
 };

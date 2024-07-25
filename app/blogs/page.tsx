@@ -7,7 +7,6 @@ import { Separator } from "../components/BlogsPage";
 import { ListLinkStyled } from "../components/ListStyled";
 import { getAllBlogsData } from "../utils/getBlogContent";
 
-const RESERVED_NAMES = ['about', 'home'];
 
 export default async function AllBlogsPage() {
     let _ = noStore();
@@ -15,12 +14,12 @@ export default async function AllBlogsPage() {
 
     return <>
         {
-            allBlogsData.map(blogData => (RESERVED_NAMES.indexOf(blogData.blogLink) == -1 && !blogData.blogLink.startsWith('#') &&
+            allBlogsData.map(blogData => (
                 <BlogContentWrapper key={blogData.blogLink} $hasMarginBottom>
                     <BlogTitleStyled>
                         {blogData.blogTitle}
                     </BlogTitleStyled>
-                    <BlogContent>{blogData.blogContent.slice(0, 100)}</BlogContent>
+                    <BlogContent>{blogData.blogPreview}</BlogContent>
                     <ListLinkStyled href={'/blogs/' + blogData.blogLink}>Continue reading...</ListLinkStyled>
                     <Separator />
                 </BlogContentWrapper>

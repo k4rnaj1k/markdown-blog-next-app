@@ -26,12 +26,14 @@ export async function getBlogContent(blogName: string): Promise<BlogData> {
 export async function getBlogContentByFilename(fileName: string): Promise<BlogData> {
   const blogFolder = await getBlogFolder();
   const fileToString = await getFileContent(fileName);
-  const blogTitle = fileToString.split("[Content]")[0];
-  const blogContent = fileToString.replace(blogTitle, "").replace('[Content]', '').trim();
+  const blogTitle = fileToString.split("[Preview]")[0];
+  const blogPreview = fileToString.replace(blogTitle, '').split('[Content]')[0];
+  const blogContent = fileToString.replace(blogTitle, "").split('[Content]')[1].trim();
   const result: BlogData = {
     blogContent,
     blogTitle,
-    blogLink: fileName.replace(blogFolder + '/', '').replace('.md', '')
+    blogLink: fileName.replace(blogFolder + '/', '').replace('.md', ''),
+    blogPreview
   };
   return result;
 };
@@ -53,8 +55,10 @@ const getSortedFiles = async (dir: string) => {
     .map(file => file.name);
 };
 
+const RESERVED_NAMES = ['about', 'home'];
+
 export async function getAllBlogsData(): Promise<Array<BlogData>> {
   const blogsFolder = await getBlogFolder();
   const result = await getSortedFiles(blogsFolder);
-  return Promise.all(result.map(fileName => getBlogContentByFilename(blogsFolder + '/' + fileName)));
+  return Promise.all(result.filter(fileName => !RESERVED_NAMES.some(name => fileName.includes(name))).filter(fileName => !fileName.startsWith('#')).map(fileName => getBlogContentByFilename(blogsFolder + '/' + fileName)));
 };
