@@ -26,7 +26,7 @@ export async function getBlogContent(blogName: string): Promise<BlogData> {
 export async function getBlogContentByFilename(fileName: string): Promise<BlogData> {
   const blogFolder = await getBlogFolder();
   const fileToString = await getFileContent(fileName);
-  const blogTitle = fileToString.split("[Preview]")[0];
+  const blogTitle = fileToString.split("[Preview]")[0].replace('[Preview]', '');
   const blogPreview = fileToString.replace(blogTitle, '').split('[Content]')[0];
   const blogContent = fileToString.replace(blogTitle, "").split('[Content]')[1].trim();
   const result: BlogData = {
