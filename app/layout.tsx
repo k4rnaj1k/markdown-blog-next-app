@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import { BodyStyled, HtmlStyled } from "./components/BodyStyled";
 import { Navbar } from "./components/Navbar";
 import { unstable_noStore as noStore } from "next/cache";
 
@@ -23,11 +22,11 @@ export default function RootLayout({
 }>) {
   let _ = noStore();
   return (
-    <HtmlStyled lang="en" className={roboto.className}>
-      <BodyStyled>
+    <html lang="en" className={roboto.className}>
+      <body>
         <Navbar />
         {children}
-      </BodyStyled>
-    </HtmlStyled>
+      </body>
+    </html>
   );
 }

@@ -6,6 +6,7 @@ export const BlogPageWrapper = styled.div`
     display: flex;
     align-items: center;
     img {
+        border: 3px solid white;
         display: block;
         margin: auto;
         object-fit: cover;
@@ -25,11 +26,14 @@ export const BlogContentWrapper = styled.div<{ $hasMarginBottom?: boolean }>`
     /* background-color:#3e3e42; */
     margin-bottom: ${({ $hasMarginBottom }) => $hasMarginBottom ? '15px' : '0'};
     @media(max-width: 600px) {
-        width: 95vw;
+        width: 80vw;
     }
+    border: 2px solid white;
     /* margin-bottom: 15px; */
 `;
 
 export const BlogTitleStyled = styled.h2`
+    border: 2px solid white;
+    margin: -15px;
 `;
 
