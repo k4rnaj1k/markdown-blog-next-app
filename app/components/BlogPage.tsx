@@ -13,7 +13,7 @@ export const BlogPageWrapper = styled.div`
         max-width: 65vw;
         max-height: 60vh;
         @media(max-width: 900px) {
-            max-width: 90vw;
+            max-width: 85vw;
         }
     }
 `;
