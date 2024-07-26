@@ -14,7 +14,7 @@ export default async function AllBlogsPage() {
     return <>
         {
             allBlogsData.map(blogData => (
-                <BlogContentWrapper key={blogData.blogLink} $hasMarginBottom>
+                <BlogContentWrapper key={blogData.blogLink} $hasMarginBottom $hasBorder>
                     <BlogTitleStyled>
                         {blogData.blogTitle}
                     </BlogTitleStyled>

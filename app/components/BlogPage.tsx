@@ -18,7 +18,7 @@ export const BlogPageWrapper = styled.div`
     }
 `;
 
-export const BlogContentWrapper = styled.div<{ $hasMarginBottom?: boolean }>`
+export const BlogContentWrapper = styled.div<{ $hasMarginBottom?: boolean, $hasBorder?: boolean }>`
     width: 80vw;
     margin-right: auto;
     padding: 15px;
@@ -26,14 +26,14 @@ export const BlogContentWrapper = styled.div<{ $hasMarginBottom?: boolean }>`
     /* background-color:#3e3e42; */
     margin-bottom: ${({ $hasMarginBottom }) => $hasMarginBottom ? '15px' : '0'};
     @media(max-width: 600px) {
-        width: 80vw;
+        width: 85vw;
     }
-    border: 2px solid white;
+    border: ${({ $hasBorder }) => $hasBorder ? '2px solid white' : 'auto'};
     /* margin-bottom: 15px; */
 `;
 
-export const BlogTitleStyled = styled.h2`
-    border: 2px solid white;
-    margin: -15px;
+export const BlogTitleStyled = styled.h2<{ $hasBorder?: boolean}>`
+    border: ${({ $hasBorder }) => $hasBorder ? '2px solid white' : 'auto'};
+    margin-top: -10px;
 `;
 

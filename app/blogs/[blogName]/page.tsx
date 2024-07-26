@@ -2,6 +2,7 @@
 
 import { BlogContent } from "@/app/components/BlogContent";
 import { BlogContentWrapper, BlogPageWrapper, BlogTitleStyled } from "@/app/components/BlogPage";
+import { Separator } from "@/app/components/BlogsPage";
 import { getBlogContent } from "@/app/utils/getBlogContent";
 import { redirect } from "next/navigation";
 
