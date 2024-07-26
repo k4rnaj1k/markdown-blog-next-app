@@ -5,6 +5,11 @@ html {
 blockquote {
     border: 2px solid white;
     padding: 0 1em;
+    font-family: var(--space-font);
+    font-size: 18px;
+    @media(max-width: 600px) {
+        font-size: 16px;
+    }
 }
 
 a:hover {
