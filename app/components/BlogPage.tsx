@@ -14,7 +14,7 @@ export const BlogPageWrapper = styled.div`
         object-fit: cover;
         max-width: 65vw;
         max-height: 60vh;
-        @media(max-width: 900px) {
+        @media(max-width: 600px) {
             max-width: ${MOBILE_WIDTH};
         }
     }
