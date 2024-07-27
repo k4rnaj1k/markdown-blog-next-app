@@ -3,10 +3,17 @@
 import { BlogContent } from "@/app/components/BlogContent";
 import { BlogContentWrapper, BlogPageWrapper, BlogTitleStyled } from "@/app/components/BlogPage";
 import { Separator } from "@/app/components/BlogsPage";
+import { getBlogName } from "@/app/service/configService";
 import { getBlogContent } from "@/app/utils/getBlogContent";
+import { Metadata } from "next";
 import { redirect } from "next/navigation";
 
-//TODO: replace placeholder with actual page
+export async function generateMetadata({ params: { blogName } }: { params: { blogName: string }}): Promise<Metadata> {
+    const { blogTitle } = await getBlogContent(blogName);
+    const blogAppName = await getBlogName();
+    return { title: blogTitle, description: 'A blog on ' + blogAppName };
+}
+
 export default async function BlogPage({ params }: { params: { blogName: string } }) {
     const { blogName } = params;
     try {
