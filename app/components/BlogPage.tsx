@@ -2,6 +2,8 @@
 
 import styled from "styled-components";
 
+const MOBILE_WIDTH = '90vw';
+
 export const BlogPageWrapper = styled.div`
     display: flex;
     align-items: center;
@@ -13,7 +15,7 @@ export const BlogPageWrapper = styled.div`
         max-width: 65vw;
         max-height: 60vh;
         @media(max-width: 900px) {
-            max-width: 85vw;
+            max-width: ${MOBILE_WIDTH};
         }
     }
 `;
@@ -26,7 +28,7 @@ export const BlogContentWrapper = styled.div<{ $hasMarginBottom?: boolean, $hasB
     /* background-color:#3e3e42; */
     margin-bottom: ${({ $hasMarginBottom }) => $hasMarginBottom ? '15px' : '0'};
     @media(max-width: 600px) {
-        width: 85vw;
+        width: ${MOBILE_WIDTH};
     }
     border: ${({ $hasBorder }) => $hasBorder ? '2px solid white' : 'auto'};
     /* margin-bottom: 15px; */

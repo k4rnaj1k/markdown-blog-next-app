@@ -3,6 +3,7 @@ import { Inter, Roboto_Mono, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
 import { unstable_noStore as noStore } from "next/cache";
+import StyledComponentsRegistry from "./lib/registry";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -26,8 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={roboto.className}>
       <body className={space.variable}>
-        <Navbar />
-        {children}
+        <StyledComponentsRegistry>
+          <Navbar />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
