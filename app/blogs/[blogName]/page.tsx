@@ -11,7 +11,7 @@ import { redirect } from "next/navigation";
 export async function generateMetadata({ params: { blogName } }: { params: { blogName: string }}): Promise<Metadata> {
     const { blogTitle } = await getBlogContent(blogName);
     const blogAppName = await getBlogName();
-    return { title: blogTitle, description: 'A blog on ' + blogAppName };
+    return { title: blogTitle, description: 'A post on ' + blogAppName };
 }
 
 export default async function BlogPage({ params }: { params: { blogName: string } }) {
