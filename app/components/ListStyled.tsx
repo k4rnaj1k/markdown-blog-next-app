@@ -9,16 +9,8 @@ export const LinksListStyled = styled.div`
 `;
 
 export const LinksListElement = styled.div`
-  padding-left: 50px;
+  padding: 0 20px;
   float: left;
-`;
-
-export const ListLinkStyled = styled.a`
-    &:hover {
-        background-color: white !important;
-        color: #1e1e1e !important;
-    }
-    color: white !important;
 `;
 
 export const NavbarWrapper = styled.nav`

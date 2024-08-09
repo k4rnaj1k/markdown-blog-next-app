@@ -1,7 +1,7 @@
 'use server'
 import styled from "styled-components";
 import { getBlogName } from "../service/configService";
-import { LinksListElement, ListLinkStyled, LinksListStyled, NavbarWrapper } from "./ListStyled";
+import { LinksListElement, LinksListStyled, NavbarWrapper } from "./ListStyled";
 
 
 
@@ -11,13 +11,16 @@ export const Navbar = async () => {
     <LinksListStyled>
       <LinksListElement>{blogName}</LinksListElement>
       <LinksListElement>
-        <ListLinkStyled href="/home">home</ListLinkStyled>
+        <a href="/home">~</a>
       </LinksListElement>
       <LinksListElement>
-        <ListLinkStyled href="/blogs">blogs</ListLinkStyled>
+        <a href="/blogs">~/blogs</a>
       </LinksListElement>
       <LinksListElement>
-        <ListLinkStyled href="/about">about</ListLinkStyled>
+        <a href="/about">~/about</a>
+      </LinksListElement>
+      <LinksListElement>
+        <a href="/contacts">~/contacts</a>
       </LinksListElement>
     </LinksListStyled>
   </NavbarWrapper>

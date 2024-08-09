@@ -17,3 +17,8 @@ export async function getBlogFolder() {
   const config: AppConfig = await getConfig();
   return config.blogsFolder;
 }
+
+export async function getContactsObj() {
+  const config: AppConfig = await getConfig();
+  return config.contacts;
+}

@@ -1,4 +1,5 @@
 export type AppConfig = {
+    contacts: object;
     blogName: string,
     aboutPage: string,
     blogsFolder: string
