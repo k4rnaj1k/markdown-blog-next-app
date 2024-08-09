@@ -11,13 +11,16 @@ export const Navbar = async () => {
     <LinksListStyled>
       <LinksListElement>{blogName}</LinksListElement>
       <LinksListElement>
-        <a href="/home">home</a>
+        <a href="/home">~</a>
       </LinksListElement>
       <LinksListElement>
-        <a href="/blogs">blogs</a>
+        <a href="/blogs">~/blogs</a>
       </LinksListElement>
       <LinksListElement>
-        <a href="/about">about</a>
+        <a href="/about">~/about</a>
+      </LinksListElement>
+      <LinksListElement>
+        <a href="/contacts">~/contacts</a>
       </LinksListElement>
     </LinksListStyled>
   </NavbarWrapper>
