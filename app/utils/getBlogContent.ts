@@ -55,7 +55,7 @@ const getSortedFiles = async (dir: string) => {
     .map(file => file.name);
 };
 
-const RESERVED_NAMES = ['about', 'home'];
+const RESERVED_NAMES = ['about', 'home', 'contacts'];
 
 export async function getAllBlogsData(): Promise<Array<BlogData>> {
   const blogsFolder = await getBlogFolder();

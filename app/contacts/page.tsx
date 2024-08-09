@@ -10,11 +10,11 @@ export default async function ContactsPage() {
     const contactLinks = await getContactsObj();
     const _ = noStore();
 
-    const contactsContent = await getFileContent(blogsBaseFolder + '/' + 'about.md');
+    const contactsContent = await getFileContent(blogsBaseFolder + '/' + 'contacts.md');
     return <><LinksListStyled>
         <BlogContentWrapper>
             <BlogContent>{contactsContent}</BlogContent>
-            {Object.entries(contactLinks).map((entry) => <LinksListElement><a href={entry[1]} target="_blank">{entry[0]}</a></LinksListElement>)}
+            {Object.entries(contactLinks).map((entry) => <LinksListElement key={entry[0]}><a href={entry[1]} target="_blank">{entry[0]}</a></LinksListElement>)}
         </BlogContentWrapper>
     </LinksListStyled></>;
 }
