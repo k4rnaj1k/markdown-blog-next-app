@@ -7,7 +7,6 @@ import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 export const BlogContent = ({ children }: { children: string }) => {
   return <Markdown
     remarkPlugins={[remarkGfm]}
-    children={children}
     components={{
       code(props) {
         const { children, className, node, ref: _, ...rest } = props
@@ -16,10 +15,9 @@ export const BlogContent = ({ children }: { children: string }) => {
           <SyntaxHighlighter
             {...rest}
             PreTag="div"
-            children={String(children).replace(/\n$/, '')}
             language={match[1]}
             style={nightOwl}
-          />
+          >{String(children).replace(/\n$/, '')}</SyntaxHighlighter>
         ) : (
           <code {...rest} className={className}>
             {children}
@@ -27,5 +25,5 @@ export const BlogContent = ({ children }: { children: string }) => {
         )
       }
     }}
-  />
+  >{children}</Markdown>
 };
