@@ -19,7 +19,7 @@ export const BlogContent = ({ children }: { children: string }) => {
             style={nightOwl}
           >{String(children).replace(/\n$/, '')}</SyntaxHighlighter>
         ) : (
-          <code {...rest} className={className}>
+          <code {...rest} style={{ backgroundColor: 'green', color: 'white' }} className={className}>
             {children}
           </code>
         )
