@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 
-const MOBILE_WIDTH = '90vw';
+const MOBILE_WIDTH = '96vw';
 
 export const BlogPageWrapper = styled.div`
     display: flex;
@@ -34,7 +34,7 @@ export const BlogContentWrapper = styled.div<{ $hasMarginBottom?: boolean, $hasB
     /* margin-bottom: 15px; */
 `;
 
-export const BlogTitleStyled = styled.h2<{ $hasBorder?: boolean}>`
+export const BlogTitleStyled = styled.h2<{ $hasBorder?: boolean }>`
     border: ${({ $hasBorder }) => $hasBorder ? '2px solid white' : 'auto'};
     margin-top: -10px;
 `;

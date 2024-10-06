@@ -2,6 +2,7 @@
 import styled from "styled-components";
 
 export const BlogPreview = styled.div`
+  width: 80vw;
 `;
 
 export const Separator = styled.div`
