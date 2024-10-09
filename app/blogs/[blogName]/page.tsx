@@ -16,7 +16,7 @@ export async function generateMetadata({ params: { blogName } }: { params: { blo
 export default async function BlogPage({ params }: { params: { blogName: string } }) {
   const { blogName } = params;
   try {
-    const { blogContent, blogTitle } = await getBlogContent(blogName);
+    const { blogContent, blogTitle, blogCreated } = await getBlogContent(blogName);
     //blogname
     //- search for file
     //- file not found - no luck
@@ -24,7 +24,7 @@ export default async function BlogPage({ params }: { params: { blogName: string 
     return <BlogPageWrapper>
       <BlogContentWrapper>
         <BlogTitleStyled>{blogTitle}</BlogTitleStyled>
-        <BlogContent>{blogContent}</BlogContent>
+        <BlogContent dateWritten={blogCreated} >{blogContent}</BlogContent>
       </BlogContentWrapper>
     </BlogPageWrapper>;
   } catch (e) {
