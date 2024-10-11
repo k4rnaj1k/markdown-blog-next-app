@@ -3,7 +3,7 @@ services:
     build: .
     container_name: markdown_blog_next
     environment:
-      MONGODB_URI: mongodb://root:example@mongo:27017/admin?retryWrites=true&w=majority
+      MONGODB_URI: mongodb://root:rootpass@mongo:27017/admin?retryWrites=true&w=majority
     ports:
      - 3000:3000
 
@@ -12,7 +12,7 @@ services:
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_PASSWORD: rootpass
 
   mongo-express:
     image: mongo-express
