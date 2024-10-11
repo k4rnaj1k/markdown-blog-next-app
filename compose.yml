@@ -6,7 +6,9 @@ services:
       MONGODB_URI: mongodb://root:rootpass@mongo:27017/admin?retryWrites=true&w=majority
     ports:
      - 3000:3000
-
+    depends_on:
+      - mongo
+ 
   mongo:
     image: mongo
     restart: always

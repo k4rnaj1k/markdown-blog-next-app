@@ -38,3 +38,10 @@ export const BlogTitleStyled = styled.h2<{ $hasBorder?: boolean }>`
     margin-top: -10px;
 `;
 
+
+export const DateWrittenStyled = styled.p`
+  text-align: end;
+  margin: -20px 0;
+  color: grey;
+  fontSize: small;
+`;
