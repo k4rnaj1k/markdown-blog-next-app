@@ -25,13 +25,12 @@ export const BlogContentWrapper = styled.div<{ $hasMarginBottom?: boolean, $hasB
     margin-right: auto;
     padding: 15px;
     margin-left: auto;
-    /* background-color:#3e3e42; */
     margin-bottom: ${({ $hasMarginBottom }) => $hasMarginBottom ? '15px' : '0'};
     @media(max-width: 600px) {
         width: ${MOBILE_WIDTH};
+        padding: 15px 0;
     }
     border: ${({ $hasBorder }) => $hasBorder ? '2px solid white' : 'auto'};
-    /* margin-bottom: 15px; */
 `;
 
 export const BlogTitleStyled = styled.h2<{ $hasBorder?: boolean }>`
