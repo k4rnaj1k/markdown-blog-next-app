@@ -2,16 +2,24 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
+import styled from "styled-components";
 
 const getDateFormatted = (d: Date) => {
   return d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear() + " " +
     d.getHours() + ":" + d.getMinutes();
 };
 
+const DateWritten = styled.p`
+  text-align: end;
+  margin: -20px 0;
+  color: grey;
+  fontSize: small;
+`;
+
 export const BlogContent = ({ children, dateWritten }: { children: string, dateWritten?: Date }) => {
   return <>
     {dateWritten &&
-      <p style={{ textAlign: 'end', margin: '-20px 0', color: 'grey', fontSize: 'small' }}>{getDateFormatted(dateWritten)}</p>}
+      <DateWritten>{getDateFormatted(dateWritten)}</DateWritten>}
     <Markdown
       remarkPlugins={[remarkGfm]}
       components={{
