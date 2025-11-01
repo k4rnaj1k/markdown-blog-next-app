@@ -22,6 +22,9 @@ export const Navbar = async () => {
       <LinksListElement>
         <a href="/contacts">~/contacts</a>
       </LinksListElement>
+      <LinksListElement>
+        <a href="/rss">rss feed{new Date().getMonth() == 10 && new Date().getFullYear() == 2025 && <span style={{ color: 'red' }}>(new)</span>} </a>
+      </LinksListElement>
     </LinksListStyled>
   </NavbarWrapper>
 };

@@ -17,6 +17,9 @@ export const BlogContent = ({ children, dateWritten }: { children: string, dateW
     <Markdown
       remarkPlugins={[remarkGfm]}
       components={{
+        img: (props) => {
+          return <a href={props.src} target="_blank"><img {...props} /></a>;
+        },
         code(props) {
           const { children, className, node, ref: _, ...rest } = props
           const match = /language-(\w+)/.exec(className || '')

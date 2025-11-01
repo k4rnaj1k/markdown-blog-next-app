@@ -1,7 +1,10 @@
 export type AppConfig = {
   contacts: object;
+  author: string;
+  authorEmail: string;
   blogName: string,
-  aboutPage: string,
+  blogDescription: string,
+  domain: string,
   blogsFolder: string
 };
 

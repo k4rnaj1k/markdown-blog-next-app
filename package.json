@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "export MONGODB_URI='mongodb://root:rootpass@localhost:27017/admin?retryWrites=true&w=majority' && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@fontsource/space-grotesk": "^5.0.18",
+    "feed": "^4.2.2",
     "mongoose": "^8.7.1",
     "next": "^14.2.2",
     "react": "^18",

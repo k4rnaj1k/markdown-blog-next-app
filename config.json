@@ -1,5 +1,11 @@
 {
   "blogName": "k4rnaj1k's blog",
+  "author": "Vlad @k4rnaj1k",
+  "authorEmail": "k4rnaj1k@k4rnaj1k.space",
   "aboutPage": "some description or file link",
-  "blogsFolder": "./blog-pages"
+  "blogsFolder": "./blog-pages",
+  "domain": "https://localhost:3000",
+  "contacts": {
+    "changeme": "https://localhost:3000/blogs/placeholder"
+  }
 }
