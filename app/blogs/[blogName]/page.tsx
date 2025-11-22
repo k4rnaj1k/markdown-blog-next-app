@@ -8,9 +8,10 @@ import { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 export async function generateMetadata({ params: { blogName } }: { params: { blogName: string } }): Promise<Metadata> {
-  const { blogTitle } = await getBlogContent(blogName);
+  const { blogTitle, blogPreview } = await getBlogContent(blogName);
   const blogAppName = await getBlogName();
-  return { title: blogTitle, description: 'A post on ' + blogAppName };
+  
+  return { title: blogTitle, description: blogPreview };
 }
 
 export default async function BlogPage({ params }: { params: { blogName: string } }) {
